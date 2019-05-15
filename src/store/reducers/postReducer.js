@@ -1,5 +1,5 @@
 import * as actionTypes from "../actionTypes/actionTypes";
-import { updateObject } from "../../shared/utility";
+import { updateObject } from "../../shared";
 
 const initialState = {
   posts: [],

@@ -4,7 +4,7 @@ import classes from "./Post.css";
 class Post extends Component {
   render() {
     const { nickname, avatar } = this.props.user;
-    const { image, caption } = this.props;
+    const { image, caption, location } = this.props;
     return (
       <article className={classes.Post} ref="Post">
         <header>
@@ -12,8 +12,11 @@ class Post extends Component {
             <div className={classes.Post_user_avatar}>
               <img src={avatar} alt={nickname} />
             </div>
-            <div className={classes.Post_user_nickname}>
-              <span>{nickname}</span>
+            <div>
+              <div className={classes.Post_user_nickname}>{nickname}</div>
+              <div>
+                <small className={classes.Post_user_location}>{location}</small>
+              </div>
             </div>
           </div>
         </header>

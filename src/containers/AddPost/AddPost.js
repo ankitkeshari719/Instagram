@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Button } from "../../components";
+import { Button, Input } from "../../components";
 import { addPost } from "../../store";
+import { updateObject, checkValidity } from "../../shared/";
+import classes from "./AddPost.css";
 
 class AddPost extends Component {
   state = {
@@ -35,10 +37,10 @@ class AddPost extends Component {
         valid: false,
         touched: false
       },
-      loaction: {
+      location: {
         elementType: "input",
         elementConfig: {
-          name: "name",
+          name: "location",
           type: "text",
           placeholder: "Add location"
         },
@@ -52,30 +54,77 @@ class AddPost extends Component {
     }
   };
 
-  render() {
-    let FormElementsArray = [];
-    for (let key in this.state.orderForm) {
-      FormElementsArray.push({ id: key, config: this.state.orderForm[key] });
-    }
+  inputChangedHandler = (event, inputIdentifier) => {
+    const updatedFormElement = updateObject(
+      this.state.postForm[inputIdentifier],
+      {
+        value: event.target.value,
+        touched: true,
+        valid: checkValidity(
+          event.target.value,
+          this.state.postForm[inputIdentifier].validation
+        )
+      }
+    );
 
-    const newPost = {
-      id: "d",
-      user: {
-        userId: "1",
-        nickname: "Chris",
-        avatar:
-          "https://static1.squarespace.com/static/5a1ac3782278e73e3d5e00cd/t/5a5ffa9cf9619a7f88fb2a92/1516239599550/IMG-20180118-WA0003%5B1%5D.jpg"
-      },
-      caption: "Big Bad Wolf!",
-      image:
-        "https://images.unsplash.com/photo-1539804990393-43bfc873dc60?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+    const updatedPostForm = updateObject(this.state.postForm, {
+      [inputIdentifier]: updatedFormElement
+    });
+
+    let formIsValid = true;
+    for (let inputIdentifier in updatedPostForm) {
+      formIsValid = updatedPostForm[inputIdentifier].valid && formIsValid;
+    }
+    this.setState({ postForm: updatedPostForm, formIsValid: formIsValid });
+  };
+
+  addPostHandler = event => {
+    event.preventDefault();
+    const formData = {};
+    for (let formElementIdentifier in this.state.postForm) {
+      formData[formElementIdentifier] = this.state.postForm[
+        formElementIdentifier
+      ].value;
+    }
+    const post = {
+      postData: formData
     };
 
+    this.props.onAddPost(post);
+  };
+
+  render() {
+    let FormElementsArray = [];
+    for (let key in this.state.postForm) {
+      FormElementsArray.push({ id: key, config: this.state.postForm[key] });
+    }
+
+    let formElements = FormElementsArray.map(formElement => (
+      <Input
+        key={formElement.id}
+        elementType={formElement.config.elementType}
+        elementConfig={formElement.config.elementConfig}
+        value={formElement.config.value}
+        changed={event => this.inputChangedHandler(event, formElement.id)}
+        invalid={!formElement.config.valid}
+        touched={formElement.config.touched}
+        shouldValidate={formElement.config.validation}
+      />
+    ));
+
     return (
-      <div>
-        <Button clicked={() => this.props.onAddPost(newPost)}>
-          Add New Post
-        </Button>
+      <div className={classes.AddPost}>
+        <h1> Add New Post</h1>
+        <form>
+          {formElements}
+          <Button
+            btnType="Success"
+            disabled={!this.state.formIsValid}
+            clicked={this.addPostHandler}
+          >
+            SUBMIT
+          </Button>
+        </form>
       </div>
     );
   }

@@ -8,7 +8,6 @@
   padding: 10px;
   margin: 10px;
   font-weight: bold;
-  color: #5c9210;
 }
 
 .Button:disabled {
@@ -19,4 +18,12 @@
 .Button:first-of-type {
   margin-left: 0;
   padding-left: 0;
+}
+
+.Success {
+  color: #5c9210;
+}
+
+.Danger {
+  color: #944317;
 }
