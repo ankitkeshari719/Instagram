@@ -52,7 +52,6 @@ export const addPost = postData => {
     axios
       .post("/posts.json", postData)
       .then(response => {
-        console.log("Add Post :", response);
         dispatch(addPostSuccess(postData));
       })
       .catch(error => {
@@ -66,7 +65,7 @@ export const addPost = postData => {
  * @param  postData All the post data
  * @return
  */
-export const fetchOrders = () => {
+export const fetchPosts = () => {
   return dispatch => {
     dispatch(fetchPostsStart());
     axios

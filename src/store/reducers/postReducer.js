@@ -16,7 +16,7 @@ const addPostSuccess = (state, action) => {
   return updateObject(state, {
     loading: false,
     error: false,
-    posts: state.orders.concat(newPost)
+    posts: state.posts.concat(newPost)
   });
 };
 
