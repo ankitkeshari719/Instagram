@@ -1,36 +1,28 @@
-i.Nav {
-  background-color: #fff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.0975);
+.Toolbar {
+  height: 56px;
+  width: 100%;
   position: fixed;
   top: 0;
-  width: 100%;
-  z-index: 2;
-  -webkit-transition: height 0.2s ease-in-out;
-  transition: height 0.2s ease-in-out;
-  height: 77px;
-}
-
-.Nav-menus {
+  left: 0;
+  background-color: #f0e7e0;
   display: flex;
-  flex-direction: row;
-  height: 77px;
-  /* justify-content: center; */
-  width: 70%;
-  margin: 0 auto;
-  padding: 26px 40px;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  box-sizing: border-box;
+  z-index: 90;
 }
 
-.Nav-brand {
-  /* height: auto; */
+.Toolbar nav {
+  height: 100%;
 }
 
-.Nav-brand-logo {
-  display: block;
-  background-position: -176px 0px;
-  background-image: url(../../sprite.png);
-  background-size: 405px 379px;
-  background-repeat: no-repeat;
-  height: 35px;
-  width: 176px;
-  text-indent: -1000%;
+.HeaderLogo {
+  height: 80%;
+}
+
+@media (max-width: 499px) {
+  .DesktopOnly {
+    display: none;
+  }
 }

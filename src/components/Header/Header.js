@@ -1,18 +1,19 @@
 import React from "react";
 import "./Header.css";
+import NavigationItems from "../UI/NavigationItems/NavigationItems";
+import Logo from "../UI/Logo/Logo";
 
 class Header extends React.Component {
   render() {
     return (
-      <nav className="Nav">
-        <div className="Nav-menus">
-          <div className="Nav-brand">
-            <a className="Nav-brand-logo" href="/">
-              Instagram
-            </a>
-          </div>
+      <header className="Toolbar">
+        <div className="HeaderLogo">
+          <Logo />
         </div>
-      </nav>
+        <nav>
+          <NavigationItems />
+        </nav>
+      </header>
     );
   }
 }
