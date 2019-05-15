@@ -5,47 +5,47 @@
   margin-bottom: 60px;
 }
 
-.Post-user {
+.Post_user {
   display: flex;
   padding: 16px;
   align-items: center;
 }
-.Post-user-avatar {
+.Post_user_avatar {
   width: 30px;
   height: 30px;
 }
 
-.Post-user-avatar img {
+.Post_user_avatar img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
 }
 
-.Post-user-nickname {
+.Post_user_nickname {
   margin-left: 12px;
   font-family: "PT Sans", sans-serif;
   font-weight: bold;
 }
 
-.Post-image-bg {
+.Post_image_bg {
   background-color: #efefef;
 }
 
-.Post-image img {
+.Post_image img {
   display: block;
   width: 100%;
   max-height: 900px;
 }
 
-.Post-caption {
+.Post_caption {
   padding: 16px 16px;
 }
-.Post-caption strong {
+.Post_caption strong {
   font-family: "PT Sans", sans-serif;
   font-weight: bold;
 }
 
-.vjs-fade-out {
+.vjs_fade_out {
   display: none;
   visibility: hidden;
   opacity: 0;

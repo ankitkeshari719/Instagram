@@ -1,14 +1,19 @@
 import React from "react";
-import "./App.css";
+import classes from "./App.css";
+import { Route, Switch } from "react-router-dom";
 import { Header } from "./components";
-import { Posts } from "./containers";
+import { Posts, AddPost, UserProfile } from "./containers";
 
 function App() {
   return (
-    <div className="App">
+    <div className={classes.App}>
       <Header />
-      <section className="App-main">
-        <Posts/>
+      <section className={classes.App_main}>
+        <Switch>
+          <Route path="/addPost" component={AddPost} />
+          <Route path="/profile" component={UserProfile} />
+          <Route path="/" exact component={Posts} />
+        </Switch>
       </section>
     </div>
   );

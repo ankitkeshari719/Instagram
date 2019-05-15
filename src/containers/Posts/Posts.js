@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { fetchPosts } from "../../store";
 import { Spinner, Post } from "../../components";
+import classes from "./Posts.css";
 
 class Posts extends Component {
   componentDidMount() {
@@ -17,7 +18,7 @@ class Posts extends Component {
       posts.map(post => <Post key={post.id} {...post} />)
     );
 
-    return <div>{fetchedPosts}</div>;
+    return <div className={classes.Posts}>{fetchedPosts}</div>;
   }
 }
 

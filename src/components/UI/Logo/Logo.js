@@ -1,11 +1,10 @@
 import React from "react";
-
 import spriteLogo from "../../../assets/images/sprite.png";
-import "./Logo.css";
+import classes from "./Logo.css";
 
 const logo = () => {
   return (
-    <div className="Logo">
+    <div className={classes.Logo}>
       <img src={spriteLogo} alt="myBurger" />
     </div>
   );

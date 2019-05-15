@@ -1,10 +1,10 @@
 import React from "react";
 
-import "./NavigationItems.css";
-import NavigationItem from "./NavigationItem/NavigationItem";
+import classes from "./NavigationItems.css";
+import { NavigationItem } from "../..";
 
 const navigationItems = props => (
-  <ul className="NavigationItems">
+  <ul className={classes.NavigationItems}>
     <NavigationItem link="/" exact>
       Instagram
     </NavigationItem>

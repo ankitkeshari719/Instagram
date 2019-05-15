@@ -1,13 +1,12 @@
 import React from "react";
-import "./Header.css";
-import NavigationItems from "../UI/NavigationItems/NavigationItems";
-import Logo from "../UI/Logo/Logo";
+import classes from "./Header.css";
+import { Logo, NavigationItems } from "..";
 
 class Header extends React.Component {
   render() {
     return (
-      <header className="Toolbar">
-        <div className="HeaderLogo">
+      <header className={classes.Toolbar}>
+        <div className={classes.HeaderLogo}>
           <Logo />
         </div>
         <nav>
