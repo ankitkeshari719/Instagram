@@ -73,7 +73,6 @@ export const addPost = post => {
 
 /**
  * Action to  fetch all post
- * @param  postData All the post data
  * @return
  */
 export const fetchPosts = () => {
