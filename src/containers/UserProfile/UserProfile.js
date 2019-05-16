@@ -12,7 +12,6 @@ class UserProfile extends Component {
       <>
         <UserHeader />
         <UserPosts />
-        <AddNewOtherPost/>
       </>
     );
   }
