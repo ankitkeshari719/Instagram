@@ -87,13 +87,13 @@ class UserHead extends Component {
                   {followedBy.map((fBy, index) => {
                     if (index === followedBy.length - 1) {
                       return (
-                        <small>
+                        <small key={fBy + new Date()}>
                           &nbsp;and <b> {fBy}</b>
                         </small>
                       );
                     } else {
                       return (
-                        <small>
+                        <small key={fBy + new Date()}>
                           <b> {fBy}</b>,
                         </small>
                       );
