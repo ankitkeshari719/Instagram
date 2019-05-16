@@ -26,7 +26,7 @@ export const newUserSignUpFailed = error => {
  * @param  userData All the user data
  * @return
  */
-export const addUser = userData => {
+export const addNewUser = userData => {
   return dispatch => {
     dispatch(newUserSignUpStart());
     axios
