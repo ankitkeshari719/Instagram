@@ -9,7 +9,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 function UserPost(props) {
-  console.log(props);
   const { image, noOfComments, noOfLikes, type } = props;
   return (
     <div>

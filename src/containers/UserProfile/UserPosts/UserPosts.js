@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { fetchUserPosts } from "../../../store";
+import classes from "../UserProfile.css";
 import { Spinner, UserPost } from "../../../components";
 
 class UserPosts extends Component {
@@ -16,7 +17,11 @@ class UserPosts extends Component {
     ) : (
       userPosts.map(post => <UserPost key={post.id} {...post} />)
     );
-    return fetchedUserPosts;
+    return (
+      <main>
+        <div className={classes.container}>{fetchedUserPosts}</div>
+      </main>
+    );
   }
 }
 

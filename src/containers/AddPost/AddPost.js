@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { Button, Input } from "../../components";
-import { addPost } from "../../store";
+import { addUserPost } from "../../store";
 import { updateObject, checkValidity } from "../../shared/";
 import classes from "./AddPost.css";
 
@@ -50,6 +50,19 @@ class AddPost extends Component {
         },
         valid: false,
         touched: false
+      },
+      type: {
+        elementType: "select",
+        elementConfig: {
+          name: "post type",
+          options: [
+            { value: "vedio", displayValue: "Vedio" },
+            { value: "gallery", displayValue: "Gallery" }
+          ]
+        },
+        value: "vedio",
+        validation: {},
+        valid: true
       }
     }
   };
@@ -86,11 +99,7 @@ class AddPost extends Component {
         formElementIdentifier
       ].value;
     }
-    const post = {
-      postData: formData
-    };
-
-    this.props.onAddPost(post);
+    this.props.onAddUserPost(formData);
   };
 
   render() {
@@ -131,7 +140,7 @@ class AddPost extends Component {
 }
 
 const mapDisatchToProps = dispatch => {
-  return bindActionCreators({ onAddPost: addPost }, dispatch);
+  return bindActionCreators({ onAddUserPost: addUserPost }, dispatch);
 };
 
 export default connect(

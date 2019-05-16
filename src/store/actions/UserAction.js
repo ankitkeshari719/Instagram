@@ -50,7 +50,22 @@ export const fetchUser = () => {
  * @param  userPostData All the userPostData new post data
  * @return
  */
-export const addUserPost = userPostData => {
+export const addUserPost = postData => {
+  const userPostData = {
+    user: {
+      userId: "1",
+      nickname: "reactjsacademy",
+      userName: "ReactJS Academy",
+      avatar:
+        "https://scontent-sin2-2.cdninstagram.com/vp/dddb01bd4d1e13e055bbd8eb758e77d9/5D555471/t51.2885-19/s150x150/15876177_1651110208519461_862989260548997120_a.jpg?_nc_ht=scontent-sin2-2.cdninstagram.com"
+    },
+    noOfLikes: "0",
+    noOfComments: "0",
+    image: postData.image,
+    type: postData.image,
+    caption: postData.caption,
+    location: postData.location
+  };
   return dispatch => {
     dispatch(addUserPostStart());
     axios
