@@ -8,6 +8,7 @@ export {
   default as AddNewUserPost
 } from "./User/AddNewUserPost/AddNewUserPost";
 export { default as NewUserSignUp } from "./User/NewUserSignUp/NewUserSignUp";
+export { default as UserPost } from "./User/UserPost/UserPost";
 export {
   default as NavigationItems
 } from "./UI/NavigationItems/NavigationItems";

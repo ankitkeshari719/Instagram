@@ -2,15 +2,15 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { fetchUser, fetchUserPosts } from "../../store";
-import UserPost from "./UserPost/UserPost";
 import UserHeader from "./UserHeader/UserHeader";
+import UserPosts from "./UserPosts/UserPosts";
 
 class UserProfile extends Component {
   render() {
     return (
       <>
         <UserHeader />
-        <UserPost />
+        <UserPosts />
       </>
     );
   }
