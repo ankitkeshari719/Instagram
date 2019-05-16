@@ -3,6 +3,7 @@ import { updateObject } from "../../shared";
 
 const initialState = {
   user: null,
+  userPosts: [],
   loading: false,
   error: false,
   fetchUserLoading: false,
@@ -95,11 +96,11 @@ const addUserPostStart = (state, action) => {
 };
 
 const addUserPostSuccess = (state, action) => {
-  const newPost = updateObject(action.postData);
+  const newUserPost = updateObject(action.userPostData);
   return updateObject(state, {
     loading: false,
     error: false,
-    posts: state.posts.concat(newPost)
+    userPosts: state.userPosts.concat(newUserPost)
   });
 };
 
@@ -120,7 +121,7 @@ const fetchUserPostsStart = (state, action) => {
 
 const fetchUserPostsSuccess = (state, action) => {
   return updateObject(state, {
-    posts: action.posts,
+    userPosts: action.userPosts,
     fetchUserPostsLoading: false,
     error: false
   });

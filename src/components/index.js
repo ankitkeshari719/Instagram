@@ -11,4 +11,6 @@ export {
   default as NavigationItem
 } from "./UI/NavigationItems/NavigationItem/NavigationItem";
 
-export { default as AddPost } from "../containers/AddPost/AddPost";
+export {
+  default as AddNewUserPost
+} from "./User/AddNewUserPost/AddNewUserPost";
