@@ -3,10 +3,10 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { Button, Input } from "../../components";
 import { addUserPost } from "../../store";
-import { updateObject, checkValidity } from "../../shared/";
-import classes from "./AddPost.css";
+import { updateObject, checkValidity } from "../../shared";
+import classes from "./AddNewPost.css";
 
-class AddPost extends Component {
+class AddNewPost extends Component {
   state = {
     postForm: {
       image: {
@@ -146,4 +146,4 @@ const mapDisatchToProps = dispatch => {
 export default connect(
   null,
   mapDisatchToProps
-)(AddPost);
+)(AddNewPost);

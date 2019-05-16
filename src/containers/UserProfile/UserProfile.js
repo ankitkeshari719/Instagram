@@ -4,6 +4,7 @@ import { bindActionCreators } from "redux";
 import { fetchUser, fetchUserPosts } from "../../store";
 import UserHeader from "./UserHeader/UserHeader";
 import UserPosts from "./UserPosts/UserPosts";
+import { AddNewOtherPost } from "../../components";
 
 class UserProfile extends Component {
   render() {
@@ -11,6 +12,7 @@ class UserProfile extends Component {
       <>
         <UserHeader />
         <UserPosts />
+        <AddNewOtherPost/>
       </>
     );
   }

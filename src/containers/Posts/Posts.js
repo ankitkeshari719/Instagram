@@ -15,7 +15,7 @@ class Posts extends Component {
     let fetchedPosts = isLoading ? (
       <Spinner />
     ) : (
-      posts.map(post => <Post key={post.id} {...post} />)
+      posts.map(post => <Post key={post.id + new Date()} {...post} />)
     );
 
     return <div className={classes.Posts}>{fetchedPosts}</div>;

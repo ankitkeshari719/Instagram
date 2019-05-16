@@ -3,7 +3,7 @@ import classes from "./Post.css";
 
 class Post extends Component {
   render() {
-    const { nickname, avatar } = this.props.user;
+    const { nickname, avatar, userName } = this.props.user;
     const { image, caption, location } = this.props;
     return (
       <article className={classes.Post} ref="Post">
@@ -26,7 +26,7 @@ class Post extends Component {
           </div>
         </div>
         <div className={classes.Post_caption}>
-          <strong>{nickname}</strong> {caption}
+          <strong>{userName}</strong> {caption}
         </div>
       </article>
     );

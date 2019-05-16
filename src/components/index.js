@@ -5,8 +5,8 @@ export { default as Button } from "./UI/Button/Button";
 export { default as Input } from "./UI/Input/Input";
 export { default as Logo } from "./UI/Logo/Logo";
 export {
-  default as AddNewUserPost
-} from "./User/AddNewUserPost/AddNewUserPost";
+  default as AddNewOtherPost
+} from "./User/AddNewOtherPost/AddNewOtherPost";
 export { default as NewUserSignUp } from "./User/NewUserSignUp/NewUserSignUp";
 export { default as UserPost } from "./User/UserPost/UserPost";
 export {

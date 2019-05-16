@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./App.css";
 import { Route, Switch } from "react-router-dom";
 import { Header } from "./components";
-import { Posts, AddPost, UserProfile } from "./containers";
+import { Posts, AddNewPost, UserProfile } from "./containers";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Header />
       <section className={classes.App_main}>
         <Switch>
-          <Route path="/addPost" component={AddPost} />
+          <Route path="/addPost" component={AddNewPost} />
           <Route path="/profile" component={UserProfile} />
           <Route path="/" exact component={Posts} />
         </Switch>
