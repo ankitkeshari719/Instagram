@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Button } from "../../components";
-import { addNewUser } from "../../store";
+import { Button } from "../..";
+import { addNewUser } from "../../../store";
 
-class SignUp extends Component {
-  addUserHandler = () => {
+const NewUserSignUp = props => {
+  let addUserHandler = () => {
     const userData = {
       image:
         "https://scontent-sin2-2.cdninstagram.com/vp/dddb01bd4d1e13e055bbd8eb758e77d9/5D555471/t51.2885-19/s150x150/15876177_1651110208519461_862989260548997120_a.jpg?_nc_ht=scontent-sin2-2.cdninstagram.com",
@@ -28,16 +28,14 @@ class SignUp extends Component {
     this.props.onAddNewUser(userData);
   };
 
-  render() {
-    return (
-      <div>
-        <Button btnType="Success" clicked={this.addUserHandler}>
-          Add New User
-        </Button>
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <Button btnType="Success" clicked={addUserHandler}>
+        Add New User
+      </Button>
+    </div>
+  );
+};
 
 const mapDisatchToProps = dispatch => {
   return bindActionCreators({ onAddNewUser: addNewUser }, dispatch);
@@ -46,4 +44,4 @@ const mapDisatchToProps = dispatch => {
 export default connect(
   null,
   mapDisatchToProps
-)(SignUp);
+)(NewUserSignUp);
